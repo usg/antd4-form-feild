@@ -1,0 +1,30 @@
+{
+  "title": "Form methods (Class component) - antd@4.17.0-alpha.3",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "react-scripts": "1.0.0",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "react-scripts": "^4.0.0",
+    "react-dom": "^16.14.0",
+    "react": "^16.14.0",
+    "antd": "4.17.0-alpha.3",
+    "@ant-design/icons": "latest"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "name": "form-methods-class-component-antd4170-alpha3-forked",
+  "description": null,
+  "version": "0.0.0"
+}
