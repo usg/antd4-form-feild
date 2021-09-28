@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "antd/dist/antd.css";
 import "./index.css";
-import { Form, Input, Button, Select } from "antd";
+import { Form, Input, Button, Select, InputNumber } from "antd";
 const { Option } = Select;
 const layout = {
   labelCol: {
@@ -114,6 +114,45 @@ class Demo extends React.Component {
           name="control-ref"
           onFinish={this.onFinish}
         >
+          <Form.Item
+            label="价值："
+            name="aiNfap"
+            rules={[
+              { required: true, message: "请输入价值" },
+              {
+                pattern: /^\d{1-3}$/,
+                message: "请输入小数点后两位的价值"
+              },
+              {
+                validator: (rule, value) => {
+                  console.log("rule", rule);
+                  console.log("value", value);
+                  const noteVal = this.formRef.current.getFieldValue("note"); // 关联验证
+                  console.log("noteVal", noteVal);
+                  return Promise.reject("error message");
+                  /*
+                  let giValu = this.materialsForm.current.getFieldValue(
+                      "giValu"
+                    ),
+                    aiFiap = this.materialsForm.current.getFieldValue("aiFiap");
+                  let sum = Number(value) + Number(aiFiap);
+                  if (Number(giValu) !== sum) {
+                    return Promise.reject("error message");
+                  } else {
+                    return Promise.resolve();
+                  }
+                  */
+                }
+              }
+            ]}
+            validateTrigger={"onBlur"}
+          >
+            <InputNumber
+              placeholder="请输入价值"
+              max={99}
+              style={{ width: "100%" }}
+            />
+          </Form.Item>
           <Form.Item
             name="note"
             label="Note"
